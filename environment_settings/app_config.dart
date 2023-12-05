@@ -1,6 +1,5 @@
 enum AppEnvironment {
   production(environmentName: 'Produção'),
-  homolog(environmentName: 'Homologação'),
   development(environmentName: 'Desenvolvimento');
 
   const AppEnvironment({required this.environmentName});
@@ -31,7 +30,6 @@ class AppConfig {
   static AppConfig getInstance() => _instance;
 
   bool get isProd => _instance.appEnvironment == AppEnvironment.production;
-  bool get isHml => _instance.appEnvironment == AppEnvironment.homolog;
   bool get isDev => _instance.appEnvironment == AppEnvironment.development;
 
   String get environmentName => _instance.appEnvironment.environmentName;
